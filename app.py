@@ -3,7 +3,7 @@ import pickle
 import requests
 
 st.set_page_config(
-    page_title="Movie Recommendation System",
+    page_title="Movie Recommender",
     page_icon="🎬",
     layout="centered"
 )
@@ -51,7 +51,7 @@ similarity = pickle.load(open('similarity.pkl', 'rb'))
 st.markdown(
     """
     <h1 style='text-align: center; white-space: nowrap;'>
-        🎬 Movie Recommendation System
+        🎬 Movie Recommender
     </h1>
     """,
     unsafe_allow_html=True
