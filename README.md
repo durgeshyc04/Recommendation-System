@@ -1,1 +1,8 @@
 # Recommendation-System
+This is a content-based movie recommendation web application built with Python, Machine Learning, and Streamlit. Users can search for a movie they enjoy, and the application returns the top eight most similar films along with their official posters.
+
+I built this project to explore how streaming platforms suggest relevant titles based on the actual content of a film rather than just general popularity. Instead of relying on user ratings alone, this engine analyzes plot summaries, genres, keywords, lead actors, and directors to understand what makes each movie unique and find close matches across a catalog of nearly 5,000 films.
+
+To build the recommendation engine, I merged the TMDB 5000 Movies and Credits datasets and cleaned the raw metadata using Pandas and NumPy. I combined key features like plot overviews, top cast members, and directors into a single text profile for every movie, removing spaces between names so the model treats people and multi-word genres as distinct entities. Next, I applied Porter Stemming via NLTK to normalize word variations and converted the text into numerical vectors using a Bag of Words approach with Scikit-Learn. By computing cosine similarity across all movie vectors, the system quickly identifies the closest matches, which are serialized with Pickle for fast retrieval.
+
+The user interface is built with Streamlit to keep the experience clean and responsive. When a user selects a title, the app retrieves the top eight recommendations and makes live requests to The Movie Database (TMDB) API to fetch and display high-resolution movie posters in a two-row grid, falling back to a placeholder image if a poster is unavailable.
